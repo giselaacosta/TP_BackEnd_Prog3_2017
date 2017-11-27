@@ -45,7 +45,7 @@ function IngresoUsuario(){
 
 function IngresoAdmin(){
     (document.getElementById("correo") as HTMLInputElement).value="gi@acosta";
-    (document.getElementById("clave") as HTMLInputElement).value="1222";
+    (document.getElementById("clave") as HTMLInputElement).value="2222";
 
 }
 

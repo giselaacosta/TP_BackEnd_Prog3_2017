@@ -25,7 +25,7 @@ function IngresoUsuario() {
 }
 function IngresoAdmin() {
     document.getElementById("correo").value = "gi@acosta";
-    document.getElementById("clave").value = "1222";
+    document.getElementById("clave").value = "2222";
 }
 function ValidaRecordarDatos() {
     if (document.getElementById('checkbox').checked == true) {
