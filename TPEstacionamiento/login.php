@@ -27,7 +27,12 @@ session_start();
         location.href ="login.html";
        
 }
-      
+function Usuarioexiste() {
+   
+        alert("los datos se guardaron correctamente!");
+    
+       
+}
       </script> 
       
   </head>
@@ -36,24 +41,28 @@ session_start();
 </html>
 
 <?php
-$email = $_POST['correo'];
+$email = $_POST['email'];
 $pass = $_POST['clave'];
+$recordar=$_POST["checkbox"];
 
 $existe=false;
 $resultado=Empleado::TraerTodoLosEmpleados(); 
 foreach($resultado as $fila)
 {
+
+
   if($fila->GetMail()==$email && $fila->GetClave()==$pass )
   {
 
    
     if($fila->GetPerfil()=="admin"){
         header('Location: indexAdmin.php');
+        
      
     }
     else
     {
-        header('Location: indexUser.html');
+        header('Location: indexUser.php');
 
     }
     $existe=true;
@@ -64,7 +73,13 @@ foreach($resultado as $fila)
   }
 
 }
+if($existe==true && isset($recordar))
+{
 
+  echo "<script>";
+  echo "Usuarioexiste();";
+  echo "</script>";
+}
 if($existe==false)
 {
 

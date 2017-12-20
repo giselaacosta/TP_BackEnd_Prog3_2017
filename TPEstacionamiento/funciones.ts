@@ -10,7 +10,7 @@ function Agregar():void
 {
 var logueos = localStorage.getItem("usuarioslogueados"); 
 arrayusuarios= JSON.parse(logueos); 
-var correo= document.getElementById("correo") as HTMLInputElement;
+var correo= document.getElementById("email") as HTMLInputElement;
 
 var clave= document.getElementById("clave") as HTMLInputElement;
 var tipo="logueo";
@@ -29,7 +29,7 @@ if (arrayusuarios === null)
     arrayusuarios.push(usuario);
   }
  localStorage.setItem("usuarioslogueados", JSON.stringify(arrayusuarios));
-  alert("Los datos han sido almacenados"); 
+
   
 }
 
@@ -37,27 +37,29 @@ if (arrayusuarios === null)
 
 function IngresoUsuario(){
  
-    (document.getElementById("correo") as HTMLInputElement).value="gise@gise";
+    (document.getElementById("email") as HTMLInputElement).value="lola@gmail";
     (document.getElementById("clave") as HTMLInputElement).value="123";
 
 }
 
 
 function IngresoAdmin(){
-    (document.getElementById("correo") as HTMLInputElement).value="gi@acosta";
+    (document.getElementById("email") as HTMLInputElement).value="gise@gise";
     (document.getElementById("clave") as HTMLInputElement).value="2222";
 
 }
 
 
-function ValidaRecordarDatos()
+function RecordarDatos()
 {
+  var correo= document.getElementById("email") as HTMLInputElement;
+localStorage.setItem("useractual", JSON.stringify(correo.value));
   
 	 if ((document.getElementById('checkbox') as HTMLInputElement).checked==true)
   {
 
     Agregar();
-        
+    
         }
        
           
